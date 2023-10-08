@@ -1,6 +1,6 @@
 ---
 layout: page
-title: John Doe's Project Portfolio Page
+title: Li Hongguang's Project Portfolio Page
 ---
 
 ### Project: AddressBook Level 3
@@ -17,7 +17,7 @@ Given below are my contributions to the project.
 
 * **New Feature**: Added a history command that allows the user to navigate to previous commands using up/down keys.
 
-* **Code contributed**: [RepoSense link]()
+* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=lihongguang00%20&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&tabOpen=true&tabType=zoom&zFR=false&zA=lihongguang00&zR=AY2324S1-CS2103-F13-4%2Ftp%5Bmaster%5D&zACS=124.33333333333333&zS=2023-09-22&zFS=lihongguang00%20&zU=2023-10-08&zMG=false&zFTF=commit&zFGS=groupByRepos)
 
 * **Project management**:
   * Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
