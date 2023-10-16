@@ -3,7 +3,6 @@
   "pages": [
     {
       "src": "AboutUs.md",
-      "title": "About Us",
       "headings": {
         "about-us": "About Us",
         "project-team": "Project team",
@@ -119,7 +118,7 @@
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
         "calendar-system": "Calendar System",
-        "adding-an-event-coming-soon": "Adding an event (Coming Soon)",
+        "adding-an-event": "Adding an event",
         "deleting-an-event-coming-soon": "Deleting an event (Coming Soon)",
         "viewing-all-events-coming-soon": "Viewing all events (Coming Soon)",
         "miscellaneous": "Miscellaneous",
@@ -159,7 +158,7 @@
       "src": "team/lihongguang00.md",
       "title": "Hongguang's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-unimate": "Project: UniMate"
       },
       "headingKeywords": {}
     },
