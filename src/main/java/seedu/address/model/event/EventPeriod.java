@@ -6,6 +6,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -116,6 +117,10 @@ public class EventPeriod implements Comparable<EventPeriod> {
             listOfDates.add(this.start.toLocalDate().plusDays(i));
         }
         return listOfDates;
+    }
+
+    public LocalTime getStartTime() {
+        return this.start.toLocalTime();
     }
 
     @Override

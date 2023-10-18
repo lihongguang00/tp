@@ -3,6 +3,8 @@ package seedu.address.model.event;
 import static java.util.Objects.requireNonNull;
 
 import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.Optional;
@@ -100,6 +102,18 @@ public class SingleDayEventList {
     public ObservableList<Event> getDayEventList() {
         return FXCollections.<Event>observableArrayList(this.eventTree.values()
                 .toArray(new Event[0]));
+    }
+
+    public boolean isEmpty() {
+        return eventTree.isEmpty();
+    }
+
+    public Event getEarliestEvent() {
+        return eventTree.firstEntry().getValue();
+    }
+
+    public String getDay() {
+        return this.date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 
     @Override

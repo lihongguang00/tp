@@ -2,8 +2,12 @@ package seedu.address.model.calendar;
 
 import static java.util.Objects.requireNonNull;
 
+import java.time.LocalTime;
+import java.util.List;
+
 import seedu.address.model.event.AllDaysEventListManager;
 import seedu.address.model.event.Event;
+import seedu.address.model.event.SingleDayEventList;
 
 /**
  * Represents a calendar that stores and manages events.
@@ -71,6 +75,14 @@ public class Calendar {
      */
     public boolean isEmpty() {
         return this.eventManager.isEmpty();
+    }
+
+    public List<SingleDayEventList> getCurrentWeekDailyEvents() {
+        return eventManager.getDaysInCurrentWeek();
+    }
+
+    public LocalTime getEarliestEventTimeInCurrentWeek() {
+        return eventManager.getEarliestEventTimeInCurrentWeek();
     }
 
     @Override

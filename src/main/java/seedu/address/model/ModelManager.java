@@ -12,6 +12,7 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.calendar.Calendar;
+import seedu.address.model.event.AllDaysEventListManager;
 import seedu.address.model.event.Event;
 import seedu.address.model.person.Person;
 
@@ -129,6 +130,11 @@ public class ModelManager implements Model {
         requireAllNonNull(event);
 
         calendar.addEvent(event);
+    }
+
+    @Override
+    public Calendar getCalendar() {
+        return this.calendar;
     }
 
     //=========== Filtered Person List Accessors =============================================================

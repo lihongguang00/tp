@@ -1,14 +1,18 @@
 package seedu.address.model.event;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.NavigableMap;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Manages the SingleDayEventList objects for every day.
  */
 public class AllDaysEventListManager {
+    private static final int NUMBER_OF_DAYS_PER_WEEK = 7;
     private final NavigableMap<String, SingleDayEventList> dayToEventListMap;
 
     /**
@@ -43,6 +47,19 @@ public class AllDaysEventListManager {
             }
             dayToEventListMap.get(date.toString()).addEvent(event);
         }
+    }
+
+    public List<SingleDayEventList> getDaysInCurrentWeek() {
+        LocalDate dateToday = LocalDate.now();
+        LocalDate startOfWeekDate = dateToday.minusDays(dateToday.getDayOfWeek().getValue() - 1);
+        return Stream.<LocalDate>iterate(startOfWeekDate, x -> x.plusDays(1)).limit(NUMBER_OF_DAYS_PER_WEEK)
+                .map(x -> dayToEventListMap.getOrDefault(x.toString(), new SingleDayEventList(x)))
+                .collect(Collectors.toList());
+    }
+
+    public LocalTime getEarliestEventTimeInCurrentWeek() {
+        return this.getDaysInCurrentWeek().stream().filter(x -> !x.isEmpty()).map(SingleDayEventList::getEarliestEvent)
+                .min(new SortEventByStartComparator()).map(Event::getStartTime).orElse(LocalTime.MAX);
     }
 
     /**

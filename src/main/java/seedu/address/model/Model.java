@@ -5,6 +5,7 @@ import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.model.calendar.Calendar;
 import seedu.address.model.event.Event;
 import seedu.address.model.person.Person;
 
@@ -52,6 +53,8 @@ public interface Model {
 
     /** Returns the AddressBook */
     ReadOnlyAddressBook getAddressBook();
+
+    Calendar getCalendar();
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.

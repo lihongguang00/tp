@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 /**
@@ -94,6 +95,14 @@ public class Event {
      */
     public List<LocalDate> getEventDays() {
         return this.eventPeriod.getDates();
+    }
+
+    public int compareStartTime(Event other) {
+        return this.eventPeriod.compareTo(other.eventPeriod);
+    }
+
+    public LocalTime getStartTime() {
+        return this.eventPeriod.getStartTime();
     }
 
     @Override
