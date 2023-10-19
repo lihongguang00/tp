@@ -101,8 +101,16 @@ public class Event {
         return this.eventPeriod.compareTo(other.eventPeriod);
     }
 
+    public int compareEndTime(Event other) {
+        return this.eventPeriod.compareEnd(other.eventPeriod);
+    }
+
     public LocalTime getStartTime() {
         return this.eventPeriod.getStartTime();
+    }
+
+    public LocalTime getEndTime() {
+        return this.eventPeriod.getEndTime();
     }
 
     @Override

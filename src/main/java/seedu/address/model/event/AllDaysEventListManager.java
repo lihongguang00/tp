@@ -62,6 +62,11 @@ public class AllDaysEventListManager {
                 .min(new SortEventByStartComparator()).map(Event::getStartTime).orElse(LocalTime.MAX);
     }
 
+    public LocalTime getLatestEventTimeInCurrentWeek() {
+        return this.getDaysInCurrentWeek().stream().filter(x -> !x.isEmpty()).map(SingleDayEventList::getLastEvent)
+                .max(new SortEventByEndComparator()).map(Event::getEndTime).orElse(LocalTime.MIN);
+    }
+
     /**
      * Clears the manager.
      */

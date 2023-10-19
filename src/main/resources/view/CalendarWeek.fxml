@@ -3,9 +3,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/javafx/1">
-    <Label fx:id="calendarText" styleClass="label-bright" VBox.vgrow="NEVER" text="\$calendarText"/>
-    <VBox fx:id="calendarDayHolder" styleClass="pane-no-border" minWidth="320" prefWidth="320"
-          VBox.vgrow="ALWAYS" AnchorPane.topAnchor="30" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"/>
+    <Label fx:id="calendarTitle" styleClass="label-bright" VBox.vgrow="NEVER" text="\$calendarTitle"/>
+    <VBox fx:id="calendarDayHolder" styleClass="pane-no-border" minWidth="400" prefWidth="400" VBox.vgrow="ALWAYS"
+          AnchorPane.topAnchor="30" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <HBox fx:id="calendarHeader" styleClass="pane-no-border" minWidth="400" prefWidth="400"
+              minHeight="30" prefHeight="30" VBox.vgrow="NEVER" HBox.hgrow="ALWAYS">
+            <StackPane minWidth="50" prefWidth="50" HBox.hgrow="NEVER">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darkturquoise" width="50" height="30"/>
+                <Label fx:id="headerText" styleClass="cell_small_label" text="\$headerText"/>
+            </StackPane>
+        </HBox>
+    </VBox>
 </AnchorPane>

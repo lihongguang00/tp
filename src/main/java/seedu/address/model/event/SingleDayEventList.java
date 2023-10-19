@@ -112,7 +112,11 @@ public class SingleDayEventList {
         return eventTree.firstEntry().getValue();
     }
 
-    public String getDay() {
+    public Event getLastEvent() {
+        return eventTree.lastEntry().getValue();
+    }
+
+    public String getDayString() {
         return this.date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault());
     }
 

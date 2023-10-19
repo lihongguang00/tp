@@ -127,7 +127,7 @@ public class MainWindow extends UiPart<Stage> {
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
 
-        calendarWeek = new CalendarWeek();
+        calendarWeek = new CalendarWeek(logic.getCalendar());
         calendarPlaceholder.getChildren().add(calendarWeek.getRoot());
     }
 

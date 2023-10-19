@@ -85,6 +85,10 @@ public class Calendar {
         return eventManager.getEarliestEventTimeInCurrentWeek();
     }
 
+    public LocalTime getLatestEventTimeInCurrentWeek() {
+        return eventManager.getLatestEventTimeInCurrentWeek();
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) {

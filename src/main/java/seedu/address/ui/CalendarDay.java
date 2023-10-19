@@ -1,5 +1,6 @@
 package seedu.address.ui;
 
+import javafx.beans.Observable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -12,7 +13,7 @@ public class CalendarDay extends UiPart<Region> {
     public final SingleDayEventList dayEventList;
 
     @FXML
-    private Label date;
+    private Label day;
 
     @FXML
     private HBox hourlyScheduleHolder;
@@ -21,6 +22,8 @@ public class CalendarDay extends UiPart<Region> {
     public CalendarDay(SingleDayEventList dayEventList) {
         super(FXML);
         this.dayEventList = dayEventList;
-        this.date.setText(dayEventList.getDay());
+        this.day.setText(dayEventList.getDayString());
     }
+
+
 }

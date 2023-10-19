@@ -104,6 +104,17 @@ public class EventPeriod implements Comparable<EventPeriod> {
         }
     }
 
+    public int compareEnd(EventPeriod other) {
+        requireNonNull(other);
+        if (this.end.isBefore(other.end)) {
+            return -1;
+        } else if (this.end.isEqual(other.end)) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+
     /**
      * Get the dates the eventPeriod spans, stored in an arrayList.
      *
@@ -121,6 +132,10 @@ public class EventPeriod implements Comparable<EventPeriod> {
 
     public LocalTime getStartTime() {
         return this.start.toLocalTime();
+    }
+
+    public LocalTime getEndTime() {
+        return this.end.toLocalTime();
     }
 
     @Override
