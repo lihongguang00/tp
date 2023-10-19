@@ -86,6 +86,12 @@ public class EventPeriod implements Comparable<EventPeriod> {
         return this.start.isBefore(other.end) && other.start.isBefore(this.end);
     }
 
+    public boolean isOverlapping(LocalTime time) {
+        requireNonNull(time);
+
+        return start.toLocalTime().isAfter(time) || end.toLocalTime().isBefore(time);
+    }
+
     /**
      * Compares this EventPeriod with another EventPeriod.
      *

@@ -105,6 +105,11 @@ public class Event {
         return this.eventPeriod.getStartTime();
     }
 
+    public boolean isTimePeriodOverlapping(LocalTime time) {
+        requireNonNull(time);
+        return eventPeriod.isOverlapping(time);
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {

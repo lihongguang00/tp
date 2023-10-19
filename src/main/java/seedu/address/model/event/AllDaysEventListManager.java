@@ -1,5 +1,8 @@
 package seedu.address.model.event;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -49,12 +52,13 @@ public class AllDaysEventListManager {
         }
     }
 
-    public List<SingleDayEventList> getDaysInCurrentWeek() {
+    public ObservableList<SingleDayEventList> getDaysInCurrentWeek() {
         LocalDate dateToday = LocalDate.now();
         LocalDate startOfWeekDate = dateToday.minusDays(dateToday.getDayOfWeek().getValue() - 1);
-        return Stream.<LocalDate>iterate(startOfWeekDate, x -> x.plusDays(1)).limit(NUMBER_OF_DAYS_PER_WEEK)
+        return FXCollections.observableArrayList(Stream.<LocalDate>iterate(startOfWeekDate, x -> x.plusDays(1))
+                .limit(NUMBER_OF_DAYS_PER_WEEK)
                 .map(x -> dayToEventListMap.getOrDefault(x.toString(), new SingleDayEventList(x)))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
     }
 
     public LocalTime getEarliestEventTimeInCurrentWeek() {

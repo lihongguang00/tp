@@ -3,6 +3,7 @@ package seedu.address.model.event;
 import static java.util.Objects.requireNonNull;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.Map;
@@ -71,12 +72,8 @@ public class SingleDayEventList {
      */
     public boolean containsEvent(Event event) {
         requireNonNull(event);
-        for (Event thisEvent : this.eventTree.values()) {
-            if (event.equals(thisEvent)) {
-                return true;
-            }
-        }
-        return false;
+
+        return eventTree.values().stream().anyMatch(event::equals);
     }
 
     /**
@@ -85,6 +82,7 @@ public class SingleDayEventList {
      */
     public void remove(Event toRemove) {
         requireNonNull(toRemove);
+
         for (Event thisEvent : this.eventTree.values()) {
             if (toRemove.equals(thisEvent)) {
                 this.eventTree.remove(thisEvent.getEventPeriod(), thisEvent);
@@ -114,6 +112,12 @@ public class SingleDayEventList {
 
     public String getDay() {
         return this.date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault());
+    }
+
+    public boolean isThereEventOccuring(LocalTime time) {
+        requireNonNull(time);
+
+        return eventTree.values().stream().anyMatch(event -> event.isTimePeriodOverlapping(time));
     }
 
     @Override

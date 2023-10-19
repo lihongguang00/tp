@@ -75,7 +75,7 @@ public class LogicManager implements Logic {
 
     @Override
     public Calendar getCalendar() {
-        return model.getCalendarManager();
+        return model.getCalendar();
     }
 
     @Override

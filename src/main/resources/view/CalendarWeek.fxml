@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/javafx/1">
-    <Label fx:id="calendarText" styleClass="label-bright" VBox.vgrow="NEVER" text="\$calendarText"/>
-    <VBox fx:id="calendarDayHolder" styleClass="pane-no-border" minWidth="320" prefWidth="320"
-          VBox.vgrow="ALWAYS" AnchorPane.topAnchor="30" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"/>
-</AnchorPane>
+<BorderPane minHeight="300" minWidth="600" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" VBox.vgrow="ALWAYS">
+    <top>
+        <Label fx:id="calendarText" styleClass="label-bright" text="\$calendarText" BorderPane.alignment="CENTER"
+               VBox.vgrow="NEVER" />
+    </top>
+
+   <center>
+       <HBox minWidth="550" prefWidth="550" styleClass="pane-no-border" VBox.vgrow="ALWAYS">
+           <HBox>
+               <VBox minWidth="50" prefWidth="50" HBox.hgrow="NEVER" VBox.vgrow="ALWAYS">
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darkturquoise" height="30" width="50" />
+                       <Label fx:id="headerText" styleClass="cell_small_label" text="\$headerText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="mondayText" styleClass="cell_small_label" text="\$mondayText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="tuesdayText" styleClass="cell_small_label" text="\$tuesdayText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="wednesdayText" styleClass="cell_small_label" text="\$wednesdayText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="thursdayText" styleClass="cell_small_label" text="\$thursdayText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="fridayText" styleClass="cell_small_label" text="\$fridayText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="saturdayText" styleClass="cell_small_label" text="\$saturdayText" />
+                   </StackPane>
+                   <StackPane>
+                       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="darksalmon" height="30" width="50"
+                                  HBox.hgrow="NEVER" VBox.vgrow="ALWAYS" />
+                       <Label fx:id="sundayText" styleClass="cell_small_label" text="\$sundayText" />
+                   </StackPane>
+               </VBox>
+           </HBox>
+
+           <GridPane fx:id="eventSpace" minWidth="500" prefWidth="500">
+           </GridPane>
+       </HBox>
+   </center>
+</BorderPane>
