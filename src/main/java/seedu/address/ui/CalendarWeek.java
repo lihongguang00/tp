@@ -33,11 +33,16 @@ public class CalendarWeek extends UiPart<Region> {
     public CalendarWeek(Calendar calendar) {
         super(FXML);
         calendarTitle.setText(CALENDAR_TITLE);
-        calendarTitle.setText(HEADER_TEXT);
+        headerText.setText(HEADER_TEXT);
         this.calendar = calendar;
+        for (SingleDayEventList day : calendar.getCurrentWeekDailyEvents()) {
+            calendarDayHolder.getChildren().add(new CalendarDay(day).getRoot());
+        }
     }
 
-    private void setForEmptyCalendar() {
-
+    private void setCalendar() {
+        for (SingleDayEventList day : calendar.getCurrentWeekDailyEvents()) {
+            calendarDayHolder.getChildren().add(new CalendarDay(day).getRoot());
+        }
     }
 }
