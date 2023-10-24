@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Represents a period in time when an event will occur.
@@ -90,6 +91,10 @@ public class EventPeriod implements Comparable<EventPeriod> {
         requireNonNull(time);
 
         return start.toLocalTime().isAfter(time) || end.toLocalTime().isBefore(time);
+    }
+
+    public int getLengthOfPeriodInDays() {
+        return getDates().size();
     }
 
     /**

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.control.Label?>
+<StackPane fx:id="calendarEventContainer" xmlns="http://javafx.com/javafx/17.0.2-ea"
+           xmlns:fx="http://javafx.com/fxml/1">
+    <Rectangle arcHeight="5" arcWidth="5" fill="blueviolet" height="30" HBox.hgrow="ALWAYS"/>
+    <Label fx:id="eventDescription" text="\$eventDescription" HBox.hgrow="ALWAYS"/>
+</StackPane>

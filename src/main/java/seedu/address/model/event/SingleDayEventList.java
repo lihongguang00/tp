@@ -5,6 +5,7 @@ import static java.util.Objects.requireNonNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
 import java.util.NavigableMap;
@@ -118,6 +119,10 @@ public class SingleDayEventList {
         requireNonNull(time);
 
         return eventTree.values().stream().anyMatch(event -> event.isTimePeriodOverlapping(time));
+    }
+
+    public ObservableList<Event> getReadOnlyEventList() {
+        return FXCollections.observableList(new ArrayList<>(eventTree.values()));
     }
 
     @Override

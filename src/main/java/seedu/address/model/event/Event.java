@@ -110,6 +110,14 @@ public class Event {
         return eventPeriod.isOverlapping(time);
     }
 
+    public int getLengthOfEventInDays() {
+        return eventPeriod.getLengthOfPeriodInDays();
+    }
+
+    public String getDescriptionString() {
+        return description.toString();
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {

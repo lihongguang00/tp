@@ -52,13 +52,13 @@ public class AllDaysEventListManager {
         }
     }
 
-    public ObservableList<SingleDayEventList> getDaysInCurrentWeek() {
+    public List<SingleDayEventList> getDaysInCurrentWeek() {
         LocalDate dateToday = LocalDate.now();
         LocalDate startOfWeekDate = dateToday.minusDays(dateToday.getDayOfWeek().getValue() - 1);
-        return FXCollections.observableArrayList(Stream.<LocalDate>iterate(startOfWeekDate, x -> x.plusDays(1))
+        return Stream.<LocalDate>iterate(startOfWeekDate, x -> x.plusDays(1))
                 .limit(NUMBER_OF_DAYS_PER_WEEK)
                 .map(x -> dayToEventListMap.getOrDefault(x.toString(), new SingleDayEventList(x)))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
     }
 
     public LocalTime getEarliestEventTimeInCurrentWeek() {

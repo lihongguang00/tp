@@ -78,10 +78,9 @@ public class Calendar {
         return this.eventManager.isEmpty();
     }
 
-    public
 
 
-    ObservableList<SingleDayEventList> getCurrentWeekDailyEvents() {
+    public List<SingleDayEventList> getCurrentWeekDailyEvents() {
         return eventManager.getDaysInCurrentWeek();
     }
 
