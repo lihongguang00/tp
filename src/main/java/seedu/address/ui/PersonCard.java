@@ -9,6 +9,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
@@ -88,6 +90,14 @@ public class PersonCard extends UiPart<Region> {
      */
     private void showCalendar() {
         Stage calendarStage = new Stage();
+        calendarStage.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.ESCAPE)  {
+                    calendarStage.close();
+                }
+            }
+        });
         calendarStage.setResizable(false);
         calendarStage.setTitle(person.getName().toString() + TITLE_STRING_AFTER_NAME);
         calendarStage.setMinHeight(POPUP_CALENDAR_HEIGHT);

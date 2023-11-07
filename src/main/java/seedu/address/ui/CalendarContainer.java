@@ -3,8 +3,11 @@ package seedu.address.ui;
 import static seedu.address.ui.UiConstants.POPUP_CALENDAR_HEIGHT;
 import static seedu.address.ui.UiConstants.POPUP_CALENDAR_WIDTH;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -73,6 +76,14 @@ public class CalendarContainer extends UiPart<Region> {
      */
     public static void displayComparisonCalendar(ReadOnlyCalendar calendar) {
         Stage comparisonCalendarStage = new Stage();
+        comparisonCalendarStage.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.ESCAPE)  {
+                    comparisonCalendarStage.close();
+                }
+            }
+        });
         comparisonCalendarStage.setResizable(false);
         comparisonCalendarStage.initModality(Modality.APPLICATION_MODAL);
         comparisonCalendarStage.setMinHeight(POPUP_CALENDAR_HEIGHT);
