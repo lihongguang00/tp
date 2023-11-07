@@ -215,6 +215,7 @@ public class CalendarEventSpace extends UiPart<Region> {
         description.setMaxWidth(widthMultiplier * NODE_WIDTH_PER_HALF_HOUR * NUMBER_OF_HALF_HOURS_IN_HOUR);
         description.setText(event.getDescriptionString());
         description.setAlignment(Pos.CENTER);
+        description.setEllipsisString("");
 
         cardHolder.getChildren().addAll(cardRectangle, description);
         return cardHolder;
