@@ -111,7 +111,7 @@
       "headings": {
         "quick-start": "Quick start",
         "features-overview": "Features Overview",
-        "main-feature-1-address-book": "Main feature 1: Address Book",
+        "main-feature-1-addressbook": "Main feature 1: AddressBook",
         "main-feature-2-calendar-system": "Main feature 2: Calendar System",
         "sub-feature-1-calendar": "Sub-feature 1: Calendar",
         "sub-feature-2-event-list": "Sub-feature 2: Event List",
@@ -120,7 +120,7 @@
         "general-commands": "General Commands",
         "viewing-help-help": "Viewing help : help",
         "exiting-the-program-exit": "Exiting the program : exit",
-        "address-book-management": "Address Book Management",
+        "addressbook-management": "AddressBook Management",
         "adding-a-person-add": "Adding a person: add",
         "deleting-a-person-delete": "Deleting a person : delete",
         "editing-a-person-edit": "Editing a person : edit",
