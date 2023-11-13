@@ -22,22 +22,49 @@ Class JsonAdaptedPerson
 Class JsonAdaptedTag
 }
 
+package "Calendar Storage" #F4F6F6{
+Class "<<interface>>\nCalendarStorage" as CalendarStorage
+Class JsonCalendarStorage
+Class JsonSerializableCalendar
+Class JsonAdaptedEvent
+}
+
+package "Task Manager Storage" #F4F6F6{
+Class "<<interface>>\nTaskManagerStorage" as TaskManagerStorage
+Class JsonTaskManagerStorage
+Class JsonSerializableTaskManager
+Class JsonAdaptedTask
+}
+
 }
 
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Storage
 
+
 StorageManager .up.|> Storage
 StorageManager -up-> "1" UserPrefsStorage
 StorageManager -up-> "1" AddressBookStorage
+StorageManager -up-> "1" CalendarStorage
+StorageManager -up-> "1" TaskManagerStorage
 
-Storage -left-|> UserPrefsStorage
+
+Storage -right-|> UserPrefsStorage
 Storage -right-|> AddressBookStorage
+Storage -left-|> CalendarStorage
+Storage -left-|> TaskManagerStorage
 
 JsonUserPrefsStorage .up.|> UserPrefsStorage
 JsonAddressBookStorage .up.|> AddressBookStorage
+JsonCalendarStorage .up.|> CalendarStorage
+JsonTaskManagerStorage .up.|> TaskManagerStorage
 JsonAddressBookStorage ..> JsonSerializableAddressBook
+JsonCalendarStorage ..> JsonSerializableCalendar
+JsonTaskManagerStorage ..> JsonSerializableTaskManager
 JsonSerializableAddressBook --> "*" JsonAdaptedPerson
 JsonAdaptedPerson --> "*" JsonAdaptedTag
+JsonAdaptedPerson --> "*" JsonAdaptedEvent
+JsonSerializableCalendar --> "*" JsonAdaptedEvent
+JsonSerializableTaskManager --> "*" JsonAdaptedTask
 
 @enduml
