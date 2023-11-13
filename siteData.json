@@ -93,7 +93,10 @@
         "achievements": "Achievements:",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements",
         "better-confirmation-for-cleareventscommand": "Better Confirmation for ClearEventsCommand",
-        "more-ways-to-sort-tasks": "More Ways to Sort Tasks"
+        "more-ways-to-sort-tasks": "More Ways to Sort Tasks",
+        "allow-user-to-view-beyond-the-current-week-restriction-for-the-calendar": "Allow user to view beyond the current week restriction for the calendar",
+        "allow-users-to-compare-calendars-with-contacts-beyond-the-current-week": "Allow users to compare calendars with contacts beyond the current week",
+        "allow-users-to-import-ics-format-files": "Allow users to import .ics format files"
       },
       "headingKeywords": {}
     },
