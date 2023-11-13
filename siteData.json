@@ -90,7 +90,10 @@
         "main-difficulty-building-user-calendar": "Main Difficulty: Building User Calendar",
         "other-difficulty-contact-calendar": "Other Difficulty: Contact Calendar",
         "other-difficulty-task-manager-event-list": "Other Difficulty: Task Manager/Event List",
-        "achievements": "Achievements:"
+        "achievements": "Achievements:",
+        "appendix-planned-enhancements": "Appendix: Planned Enhancements",
+        "better-confirmation-for-cleareventscommand": "Better Confirmation for ClearEventsCommand",
+        "more-ways-to-sort-tasks": "More Ways to Sort Tasks"
       },
       "headingKeywords": {}
     },
