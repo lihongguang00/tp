@@ -40,6 +40,7 @@
       "headings": {
         "unimate-developer-guide": "UniMate Developer Guide",
         "acknowledgements": "Acknowledgements",
+        "note-about-terms-used-in-dg": "Note about terms used in DG",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
         "architecture": "Architecture",
@@ -52,6 +53,7 @@
         "adding-events": "Adding Events",
         "deleting-events": "Deleting Events",
         "clearing-all-events-within-a-time-frame": "Clearing all events within a time frame",
+        "calendar-comparison-comparecalendars": "Calendar Comparison (compareCalendars)",
         "contact-filtering": "Contact Filtering",
         "contact-sorting": "Contact Sorting",
         "tasklist-feature": "TaskList Feature",

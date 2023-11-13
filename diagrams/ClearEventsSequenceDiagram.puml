@@ -1,0 +1,77 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":UniMateParser" as UniMateParser LOGIC_COLOR
+participant ":ClearEventsCommandParser" as ClearEventsCommandParser LOGIC_COLOR
+participant "d:ClearEventsCommand" as ClearEventsCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+participant ":Calendar" as Calendar MODEL_COLOR
+end box
+
+[-> LogicManager : execute("clearEvents ts/2023-02-03 12:00 \nte/2023-02-03 14:00")
+activate LogicManager
+
+LogicManager -> UniMateParser : parseCommand("clearEvents ts/2023-02-03 12:00 \nte/2023-02-03 14:00")
+activate UniMateParser
+
+create ClearEventsCommandParser
+UniMateParser -> ClearEventsCommandParser
+activate ClearEventsCommandParser
+
+ClearEventsCommandParser --> UniMateParser
+deactivate ClearEventsCommandParser
+
+UniMateParser -> ClearEventsCommandParser : parse("ts/2023-02-03 12:00 \nte/2023-02-03 14:00")
+activate ClearEventsCommandParser
+
+create ClearEventsCommand
+ClearEventsCommandParser -> ClearEventsCommand : new ClearEventsCommand(EventPeriod)
+activate ClearEventsCommand
+
+ClearEventsCommand --> ClearEventsCommandParser : d
+deactivate ClearEventsCommand
+
+ClearEventsCommandParser --> UniMateParser : d
+deactivate ClearEventsCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+ClearEventsCommandParser -[hidden]-> UniMateParser
+destroy ClearEventsCommandParser
+
+UniMateParser --> LogicManager : d
+deactivate UniMateParser
+
+LogicManager -> ClearEventsCommand : execute()
+activate ClearEventsCommand
+
+ClearEventsCommand -> Model : findEventsInRange(EventPeriod)
+activate Model
+
+Model -> Calendar : getEventsInRange((EventPeriod)
+activate Calendar
+
+Calendar --> Model
+deactivate Calendar
+
+Model --> ClearEventsCommand
+deactivate Model
+
+create CommandResult
+ClearEventsCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> ClearEventsCommand
+deactivate CommandResult
+
+ClearEventsCommand --> LogicManager : result
+deactivate ClearEventsCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml

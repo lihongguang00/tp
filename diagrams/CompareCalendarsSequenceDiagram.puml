@@ -1,0 +1,72 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":UniMateParser" as UniMateParser LOGIC_COLOR
+participant ":CompareCalendarByIndexCommandParser" as CompareCalendarByIndexCommandParser LOGIC_COLOR
+participant "c:CompareCalendarByIndexCommand" as CompareCalendarByIndexCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("compareCalendars 1")
+activate LogicManager
+
+LogicManager -> UniMateParser : parseCommand("compareCalendars 1")
+activate UniMateParser
+
+create CompareCalendarByIndexCommandParser
+UniMateParser -> CompareCalendarByIndexCommandParser
+activate CompareCalendarByIndexCommandParser
+
+CompareCalendarByIndexCommandParser --> UniMateParser
+deactivate CompareCalendarByIndexCommandParser
+
+UniMateParser -> CompareCalendarByIndexCommandParser : parse("1")
+activate CompareCalendarByIndexCommandParser
+
+create CompareCalendarByIndexCommand
+CompareCalendarByIndexCommandParser -> CompareCalendarByIndexCommand
+activate CompareCalendarByIndexCommand
+
+CompareCalendarByIndexCommand --> CompareCalendarByIndexCommandParser : c
+deactivate CompareCalendarByIndexCommand
+
+CompareCalendarByIndexCommandParser --> UniMateParser : c
+deactivate CompareCalendarByIndexCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+CompareCalendarByIndexCommandParser -[hidden]-> UniMateParser
+destroy CompareCalendarByIndexCommandParser
+
+UniMateParser --> LogicManager : c
+deactivate UniMateParser
+
+LogicManager -> CompareCalendarByIndexCommand : execute()
+activate CompareCalendarByIndexCommand
+
+CompareCalendarByIndexCommand -> CompareCalendarByIndexCommand : create comparison calendar cal:ReadOnlyCalendar
+
+CompareCalendarByIndexCommand -> Model : setComparisonCalendar(cal)
+activate Model
+
+Model --> CompareCalendarByIndexCommand
+deactivate Model
+
+create CommandResult
+CompareCalendarByIndexCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> CompareCalendarByIndexCommand
+deactivate CommandResult
+
+CompareCalendarByIndexCommand --> LogicManager : result
+deactivate CompareCalendarByIndexCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml

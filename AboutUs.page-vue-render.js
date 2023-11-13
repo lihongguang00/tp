@@ -47,9 +47,9 @@ with(this){return _c('h3',{attrs:{"id":"nicholas-lee"}},[_v("Nicholas Lee"),_c('
 with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"http://github.com/nicrandomlee"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/nicrandomlee.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities: TBD")])])}
+with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities: Product Feature Enhancements")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Mon, 13 Nov 2023, 19:37:28 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Mon, 13 Nov 2023, 21:15:21 GMT+8]")])])])}
 }];
   
