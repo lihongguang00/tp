@@ -79,7 +79,7 @@ Address -[hidden]right-> Email
 TaskManager --> "1" TaskList
 TaskList --> "*" Task
 Task *--> "1" TaskDescription
-Task *--> "0..1"Deadline
+Task *--> "1"Deadline
 
 ModelManager --> "~* filtered" Person
 @enduml

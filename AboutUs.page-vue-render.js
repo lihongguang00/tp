@@ -20,7 +20,7 @@ with(this){return _c('h3',{attrs:{"id":"li-hongguang"}},[_v("Li Hongguang"),_c('
 with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"https://github.com/lihongguang00"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/lihongguang00.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Role: Team Member")]),_v(" "),_c('li',[_v("Responsibilities: TBD")])])}
+with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities:\n"),_c('ul',[_c('li',[_v("Calendar System Developer")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"andre-sim"}},[_v("Andre Sim"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#andre-sim","onclick":"event.stopPropagation()"}})])}
@@ -29,7 +29,7 @@ with(this){return _c('h3',{attrs:{"id":"andre-sim"}},[_v("Andre Sim"),_c('a',{st
 with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"http://github.com/fallman2"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/fallman2.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Role: Team Member")]),_v(" "),_c('li',[_v("Responsibilities: TBD")])])}
+with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities:\n"),_c('ul',[_c('li',[_v("Task List Developer")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"low-jun-hong"}},[_v("Low Jun Hong"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#low-jun-hong","onclick":"event.stopPropagation()"}})])}
@@ -38,7 +38,7 @@ with(this){return _c('h3',{attrs:{"id":"low-jun-hong"}},[_v("Low Jun Hong"),_c('
 with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"http://github.com/junhonglow"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/junhonglow.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities: TBD")])])}
+with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities:\n"),_c('ul',[_c('li',[_v("Event List Developer")]),_v(" "),_c('li',[_v("Storage Developer")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"nicholas-lee"}},[_v("Nicholas Lee"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#nicholas-lee","onclick":"event.stopPropagation()"}})])}
@@ -47,9 +47,9 @@ with(this){return _c('h3',{attrs:{"id":"nicholas-lee"}},[_v("Nicholas Lee"),_c('
 with(this){return _c('p',[_v("["),_c('a',{attrs:{"href":"http://github.com/nicrandomlee"}},[_v("github")]),_v("]\n["),_c('a',{attrs:{"href":"/tp/team/nicrandomlee.html"}},[_v("portfolio")]),_v("]")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities: Product Feature Enhancements")])])}
+with(this){return _c('ul',[_c('li',[_v("Role: Developer")]),_v(" "),_c('li',[_v("Responsibilities:\n"),_c('ul',[_c('li',[_v("Product Feature Enhancements")]),_v(" "),_c('li',[_v("Product Tester")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 1:12:26 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 4:37:41 GMT+8]")])])])}
 }];
   
