@@ -1,0 +1,96 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":EditContactEventParser" as EditContactEventParser LOGIC_COLOR
+participant ":EditContactEvent" as EditContactEvent LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+participant ":VersionedAddressBook" as VersionedAddressBook MODEL_COLOR
+end box
+
+box Calendar CALENDAR_COLOR_T1
+participant ":Calendar" as Calendar CALENDAR_COLOR_T1
+participant ":allDaysEventListManager" as AllDaysEventListManager CALENDAR_COLOR_T1
+end box
+
+[-> LogicManager : execute(editContactEvent)
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand(editContactEvent)
+activate AddressBookParser
+
+create EditContactEventParser
+AddressBookParser -> EditContactEventParser
+activate EditContactEventParser
+
+EditContactEventParser --> AddressBookParser
+deactivate EditContactEventParser
+
+AddressBookParser -> EditContactEventParser : parse("1 1 d/CS2103 meeting ts/2023-11-11 10:00 te/2023-11-11 12:00")
+activate EditContactEventParser
+
+create EditContactEvent
+EditContactEventParser -> EditContactEvent
+activate EditContactEvent
+
+EditContactEvent --> EditContactEventParser
+deactivate EditContactEvent
+
+EditContactEventParser --> AddressBookParser
+deactivate EditContactEventParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+EditContactEventParser -[hidden]-> AddressBookParser
+destroy EditContactEventParser
+
+AddressBookParser --> LogicManager
+deactivate AddressBookParser
+
+LogicManager -> EditContactEvent : execute()
+activate EditContactEvent
+
+EditContactEvent -> Calendar
+activate Calendar
+
+Calendar -> AllDaysEventListManager
+activate AllDaysEventListManager
+
+AllDaysEventListManager -> Calendar
+deactivate AllDaysEventListManager
+
+Calendar -> EditContactEvent
+deactivate Calendar
+
+EditContactEvent -> Model : setPerson()
+activate Model
+
+Model -> VersionedAddressBook
+activate VersionedAddressBook
+
+VersionedAddressBook --> Model :
+deactivate VersionedAddressBook
+
+Model --> EditContactEvent
+deactivate Model
+
+create CommandResult
+EditContactEvent -> CommandResult
+activate CommandResult
+
+CommandResult --> EditContactEvent
+deactivate CommandResult
+
+EditContactEvent --> LogicManager : result
+deactivate EditContactEvent
+EditContactEvent -[hidden]-> LogicManager : result
+destroy EditContactEvent
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
